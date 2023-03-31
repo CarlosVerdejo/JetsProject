@@ -1,0 +1,2 @@
+DCV,USS Enterprise,10000,100000,5435354
+Fighter,RedWing Jet,100,10
