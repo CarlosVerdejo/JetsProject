@@ -23,19 +23,18 @@ public class JetsApplication {
 		
 		if (input.equals("9")) {
 			run = false;
+			
 		} else if (input.equals("1")) {
-			System.out.println("\nHere are the aircrafts in the fleet!");
-			List<Jet> jets = hangar.getFleet();
-			for (int i = 0; i < jets.size(); i++) {
-				System.out.println(jets.get(i));
-			}
-			System.out.println("\n");
+			hangar.listTheFleet();
+			
 		} else if (input.equals("2")) {
 			hangar.flyTheJets();
 		
 		} else if (input.equals("3")) {
+			hangar.determineFastestJet();
 
 		} else if (input.equals("4")) {
+			hangar.determineLongestTravelingJet();
 
 		} else if (input.equals("5")) {
 

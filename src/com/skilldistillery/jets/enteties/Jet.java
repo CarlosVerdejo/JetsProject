@@ -9,7 +9,7 @@ public abstract class Jet {
 	
 	public String fly(String model, double speed, double range, double price) {
 		double flightTime = range / speed; 
-		String flightTimeString  =toString() + "This Aircraft Can Travel " + flightTime + " Hours Before Running Out Of Fuel.";
+		String flightTimeString  =toString() + "\nThis Aircraft Can Travel " + flightTime + " Hours At Maximum Speed Before Running Out Of Fuel.\n";
 		return flightTimeString;
 	}
 	
@@ -53,6 +53,7 @@ public abstract class Jet {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	
 	
 
