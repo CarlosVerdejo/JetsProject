@@ -2,7 +2,6 @@ package com.skilldistillery.jets.app;
 
 import java.util.List;
 import java.util.Scanner;
-
 import com.skilldistillery.jets.enteties.AirField;
 import com.skilldistillery.jets.enteties.Jet;
 
@@ -13,25 +12,27 @@ public class JetsApplication {
 		j.launch();
 	}
 
-	public void launch() {
+	public void launch() { 
 		Scanner sc = new Scanner(System.in);
 		AirField hangar = new AirField();
-//		System.out.println(hangar.readFromFile("jets.txt"));
-//		System.out.println(hangar.getFleet());
+		boolean run = true;
 
+		while (run) {
 		printMenu();
 		String input = sc.nextLine();
-
+		
 		if (input.equals("9")) {
-			System.out.println("Exiting App");
-			sc.close();
+			run = false;
 		} else if (input.equals("1")) {
+			System.out.println("\nHere are the aircrafts in the fleet!");
 			List<Jet> jets = hangar.getFleet();
 			for (int i = 0; i < jets.size(); i++) {
 				System.out.println(jets.get(i));
 			}
+			System.out.println("\n");
 		} else if (input.equals("2")) {
-
+			hangar.flyTheJets();
+		
 		} else if (input.equals("3")) {
 
 		} else if (input.equals("4")) {
@@ -45,11 +46,14 @@ public class JetsApplication {
 		} else if (input.equals("8")) {
 
 		}
-
+		}
+		System.out.println("Exiting App");
+		sc.close();
 	}
 
 	public void printMenu() {
-		System.out.println("Menu" + "\n[1] ListFleet" + "\n[2] Fly all Jets" + "\n[3] View Fastest Jet"
+		System.out.println("**************\n"
+				+ "*    Menu    *" +"\n**************" + "\n[1] ListFleet" + "\n[2] Fly all Jets" + "\n[3] View Fastest Jet"
 				+ "\n[4] View Jet with fastest range" + "\n[5] Load all Cargo Jets" + "\n[6] Dogfight!"
 				+ "\n[7] Add a jet to Fleet" + "\n[8] Remove a jet from Fleet" + "\n[9] Quit");
 	}

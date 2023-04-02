@@ -7,10 +7,10 @@ public abstract class Jet {
 	private double price;
 	
 	
-	public void fly(String model, double speed, double range, double price, double flightTime) {
-		flightTime = range / speed; 
-		System.out.println(toString());
-		System.out.println("This Aircraft Can Travel " + flightTime + " Hours Before Running Out Of Fuel.");
+	public String fly(String model, double speed, double range, double price) {
+		double flightTime = range / speed; 
+		String flightTimeString  =toString() + "This Aircraft Can Travel " + flightTime + " Hours Before Running Out Of Fuel.";
+		return flightTimeString;
 	}
 	
 	
