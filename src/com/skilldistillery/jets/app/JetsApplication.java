@@ -37,8 +37,10 @@ public class JetsApplication {
 			hangar.determineLongestTravelingJet();
 
 		} else if (input.equals("5")) {
+			hangar.implementCargoMode();
 
 		} else if (input.equals("6")) {
+			hangar.implementFightMode();
 
 		} else if (input.equals("7")) {
 

@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class AirField {
+public class AirField{
 	private List<Jet> fleet = new ArrayList<>();
 	private List<String> flyFleet = new ArrayList<>();
-
 	public AirField() {
 		// populate its fleet from file
 		readFromFile("jets.txt");
@@ -56,8 +55,8 @@ public class AirField {
 	}
 
 	public void flyTheJets() {
-		for (int i = 0; i < flyFleet.size(); i++) {
-			System.out.println(flyFleet.get(i));
+		for (Jet jet : fleet) {
+			System.out.println(jet.fly(jet.getModel(),jet.getSpeed() , jet.getRange(), jet.getPrice()));
 		}
 	}
 
@@ -83,11 +82,31 @@ public class AirField {
 			}
 		}for (Jet jets : fleet) {
 				if (jets.getRange() / jets.getSpeed() == bestTravelTime) {
-				System.out.println("\nThe Jet With The Longest Range is: \n" + jets.toString()+ "\nWith A Range Of " + bestTravelTime + "Hours At Max Speed!");
+				System.out.println("\nThe Jet With The Longest Range is: \n" + jets.toString()+ "\nWith A Range Of " + bestTravelTime + "Hours At Max Speed!\n");
 				}
 			}	
 	}
 
+	public void implementCargoMode() {
+		for (Jet jet : fleet) {
+			if (jet instanceof CargoPlane) {
+				System.out.print(jet.getModel() + " ");
+				jet.loadCargo();
+				System.out.println();
+			}
+		}
+	}
+	
+	public void implementFightMode() {
+		for (Jet jet : fleet) {
+			if (jet instanceof FighterJet) {
+				System.out.print(jet.getModel() + " ");
+				jet.fight();
+				System.out.println();
+			}
+		}
+	}		
+	
 	public List<Jet> getFleet() {
 		return fleet;
 	}

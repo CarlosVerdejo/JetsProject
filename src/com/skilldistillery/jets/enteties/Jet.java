@@ -1,6 +1,6 @@
 package com.skilldistillery.jets.enteties;
 
-public abstract class Jet {
+public abstract class Jet implements AltModes{
 	private String model;
 	private double speed;
 	private double range;
@@ -15,8 +15,23 @@ public abstract class Jet {
 	
 	
 	@Override
+	public void loadCargo() {
+		System.out.println("Cargo Loaded");
+		
+	}
+
+
+	@Override
+	public void fight() {
+		System.out.println("In Fight Mode");
+		
+		
+	}
+
+
+	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		return "[Model = " + model + ", Speed = " + speed + ", Range = " + range + ", Price = " + price + "]";
 	}
 
 

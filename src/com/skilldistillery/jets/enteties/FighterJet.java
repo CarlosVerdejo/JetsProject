@@ -6,7 +6,9 @@ public class FighterJet extends Jet {
 		super(model, speed, range, price);
 	}
 
-	
+	public abstract interface fightMode{
+		void fight();
+	}
 	
 	
 	
