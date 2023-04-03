@@ -2,16 +2,16 @@ package com.skilldistillery.jets.enteties;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class AirField{
 	private List<Jet> fleet = new ArrayList<>();
 	private List<String> flyFleet = new ArrayList<>();
 	public AirField() {
-		// populate its fleet from file
 		readFromFile("jets.txt");
 	}
 
@@ -45,13 +45,11 @@ public class AirField{
 	}
 
 	public void listTheFleet() {
-		AirField hangar = new AirField();
 		System.out.println("\nHere are the aircrafts in the fleet!");
-		List<Jet> jets = hangar.getFleet();
-		for (int i = 0; i < jets.size(); i++) {
-			System.out.println(jets.get(i));
+		for(Jet jets : fleet) {
+			System.out.println(jets.toString());
 		}
-		System.out.println("\n");
+		System.out.println();
 	}
 
 	public void flyTheJets() {
@@ -106,6 +104,10 @@ public class AirField{
 			}
 		}
 	}		
+	
+	public void addNewJet(Jet newOne) {
+		fleet.add(newOne);
+	}
 	
 	public List<Jet> getFleet() {
 		return fleet;
