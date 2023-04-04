@@ -10,7 +10,6 @@ import java.util.List;
 
 public class AirField{
 	private List<Jet> fleet = new ArrayList<>();
-	private List<String> flyFleet = new ArrayList<>();
 	public AirField() {
 		readFromFile("jets.txt");
 	}
@@ -29,13 +28,10 @@ public class AirField{
 				if (model.contains("Cargo")) {
 					Jet cargo = new CargoPlane(model, speed, range, price);
 					fleet.add(cargo);
-					String flyCargo = cargo.fly(model, speed, range, price);
-					flyFleet.add(flyCargo);
+
 				} else if (model.contains("Fighter")) {
 					Jet fighter = new FighterJet(model, speed, range, price);
 					fleet.add(fighter);
-					String flyFighter = fighter.fly(model, speed, range, price);
-					flyFleet.add(flyFighter);
 				}
 			}
 		} catch (IOException e) {
@@ -89,7 +85,7 @@ public class AirField{
 		for (Jet jet : fleet) {
 			if (jet instanceof CargoPlane) {
 				System.out.print(jet.getModel() + " ");
-				jet.loadCargo();
+				((CargoPlane) jet).loadCargo();
 				System.out.println();
 			}
 		}
@@ -99,7 +95,7 @@ public class AirField{
 		for (Jet jet : fleet) {
 			if (jet instanceof FighterJet) {
 				System.out.print(jet.getModel() + " ");
-				jet.fight();
+				((FighterJet) jet).fight();
 				System.out.println();
 			}
 		}

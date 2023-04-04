@@ -1,6 +1,6 @@
 package com.skilldistillery.jets.enteties;
 
-public class CargoPlane extends Jet {
+public class CargoPlane extends Jet implements LoadCargo{
 	
 
 	public CargoPlane(String model, double speed, double range, double price) {
@@ -8,10 +8,13 @@ public class CargoPlane extends Jet {
 		
 	}
 
-	public abstract interface LoadTheCargo {
-		void loadCargo();
-	
+	@Override
+	public void loadCargo() {
+		System.out.println("Cargo Loaded");
+		
 	}
+	
+	
 
 	
 	
