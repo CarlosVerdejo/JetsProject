@@ -12,6 +12,5 @@ interface,
 
 #Lessons Learned# JetsProject:
 
-I learned a lot during this project. It forced me to go back and review a good deal of lessons learned in
-the previous weeks. It was a great exercise that helped solidify my understanding in the basics of 
+"Jets Prokect" was a great exercise that helped solidify my understanding in the basics of 
 object oriented programming. 
