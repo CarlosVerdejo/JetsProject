@@ -10,7 +10,7 @@ The menu allows you to view airplane information and interact with the fleet in 
 Arraylist, FileReader, Scanners, for loops,abstract methods,
 interface, 
 
-#Lessons Learned# JetsProject:
+#Lessons Learned# 
 
 "Jets Prokect" was a great exercise that helped solidify my understanding in the basics of 
 object oriented programming. 
