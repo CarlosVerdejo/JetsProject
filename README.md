@@ -12,5 +12,5 @@ interface,
 
 #Lessons Learned# 
 
-"Jets Prokect" was a great exercise that helped solidify my understanding in the basics of 
+"Jets Project" was a great exercise that helped solidify my understanding in the basics of 
 object oriented programming. 
